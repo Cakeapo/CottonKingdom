@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public LayerMask groundedMask;
 
+    public Vector3 inputDir;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -24,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
 	void Update ()
     {
         transform.eulerAngles = new Vector3(0 + rb.velocity.z, 0, 0 - rb.velocity.x);
+
+        transform.rotation = Quaternion.LookRotation(rb.velocity);
 
         //Check if player is Grounded        
         isGrounded = Physics.CheckSphere(transform.position, 0.3f, groundedMask);
@@ -38,10 +42,17 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = walkSpeed;
 
         //basic movement
-        rb.velocity = new Vector3(velX, rb.velocity.y, velZ);
+        //rb.MovePosition(transform.position + transform.forward * velZ);
 
-        velX = Input.GetAxis("Horizontal") * moveSpeed;
-        velZ = Input.GetAxis("Vertical") * moveSpeed;
+        //rb.velocity = new Vector3(velX, rb.velocity.y, velZ);
+        rb.velocity = inputDir * moveSpeed;
+
+        inputDir.x = Input.GetAxis("Horizontal");
+        inputDir.z = Input.GetAxis("Vertical");
+
+        //velX = Input.GetAxis("Horizontal") * moveSpeed;
+        //velZ = Input.GetAxis("Vertical") * moveSpeed;
+
 
         //jumpcounter for double jumping
         if (isGrounded)
