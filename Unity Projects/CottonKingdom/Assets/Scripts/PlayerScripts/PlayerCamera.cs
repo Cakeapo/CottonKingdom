@@ -5,9 +5,12 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour {
 
     public float rotationSpeedX, rotationSpeedY;
-    private float rotX, rotY, rotZ;
+    private float rotX, rotY;
+    public float lowerLimit, upperLimit;
     public Transform playerHead;
+
     public GameObject cameraObject;
+    public GameObject cameraMount;
     public Camera playerCam;
 
     public GameObject player;
@@ -27,11 +30,12 @@ public class PlayerCamera : MonoBehaviour {
         //cameraObject.transform.LookAt(playerHead);
 
         rotationSpeedY = Input.GetAxis("Mouse X");
-        rotationSpeedX = Input.GetAxis("Mouse Y");
+        rotationSpeedX = -Input.GetAxis("Mouse Y");
 
         rotY = transform.eulerAngles.y + rotationSpeedY;
-        rotX = transform.eulerAngles.x + rotationSpeedX;
+        rotX = Mathf.Clamp(transform.eulerAngles.x + rotationSpeedX, lowerLimit, upperLimit);
 
-        transform.eulerAngles = new Vector3(rotX, rotY, transform.eulerAngles.z);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, rotY, transform.eulerAngles.z);
+        cameraMount.transform.localEulerAngles = new Vector3(cameraMount.transform.eulerAngles.x + rotX, 0, 0);
 	}
 }

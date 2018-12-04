@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float runSpeed, walkSpeed, jumpForce;
+    public float runSpeed, walkSpeed, jumpForce, turnAroundTime;
     private float moveSpeed;
     public bool isGrounded, isRunning;
 
-    public float velX, velY, velZ;
     public int jumpCount;
 
     public Rigidbody rb;
     public LayerMask groundedMask;
 
-    public Vector3 inputDir;
+    public Vector3 input;
+
+    public Transform cameraPivot;
 
 	// Use this for initialization
 	void Start ()
@@ -23,11 +24,15 @@ public class PlayerMovement : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
-        transform.eulerAngles = new Vector3(0 + rb.velocity.z, 0, 0 - rb.velocity.x);
+        //basic movement
+        rb.velocity = transform.TransformDirection(input * moveSpeed);
+    }
 
-        transform.rotation = Quaternion.LookRotation(rb.velocity);
+    private void Update()
+    {
+        input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         //Check if player is Grounded        
         isGrounded = Physics.CheckSphere(transform.position, 0.3f, groundedMask);
@@ -41,22 +46,14 @@ public class PlayerMovement : MonoBehaviour
         else
             moveSpeed = walkSpeed;
 
-        //basic movement
-        //rb.MovePosition(transform.position + transform.forward * velZ);
-
-        //rb.velocity = new Vector3(velX, rb.velocity.y, velZ);
-        rb.velocity = inputDir * moveSpeed;
-
-        inputDir.x = Input.GetAxis("Horizontal");
-        inputDir.z = Input.GetAxis("Vertical");
-
-        //velX = Input.GetAxis("Horizontal") * moveSpeed;
-        //velZ = Input.GetAxis("Vertical") * moveSpeed;
-
-
-        //jumpcounter for double jumping
         if (isGrounded)
             jumpCount = 1;
+
+        //look in camera direction on move input
+        if (input.magnitude != 0)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, cameraPivot.rotation, turnAroundTime * Time.deltaTime);
+        }
 
         if (Input.GetButtonDown("Jump"))
         {
