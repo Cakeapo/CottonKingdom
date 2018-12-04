@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Scr_BasicNPC_01 : MonoBehaviour {
 
     public bool hasInteracted = false, isInteractable = false, hasInformation = true;
@@ -13,10 +14,13 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
 
     private Scr_DataSaver_01 dataSaver;
     [Space(5)]
-    public GameObject info;
+    public GameObject info, popup;
+    //public ParticleSystem popUpParticle;
+    Animator anim;
 
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+    void Start ()
     {
         LoadData();
 
@@ -35,13 +39,31 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
         if (isInteractable == true)
         {
             //print("Hi.");
-            print("NPC Interaction_01");
+            //popUpParticle.Play(true);  play anim
+            anim.SetBool("CanInteract", true);
+            if (Input.GetAxis("Interact") > 0)
+            {
+                print("NPC Interaction_01");
+                anim.SetBool("CanInteract", false);
+
+                isInteractable = hasInformation = false;
+            }
+        }
+        else
+        {
+            //popUpParticle.Play(false);    dont play anim
+            anim.SetBool("CanInteract", false);
         }
 
     }
 
     private void LoadData()
     {
+        //popUpParticle.Play(false);     set anim to 0
+        anim = popup.GetComponent<Animator>();
+        anim.SetBool("CanInteract", false);
+
+
         dataSaver = GetComponent<Scr_DataSaver_01>();
         print("Retrive interactions >>>");
         interactionTotal = dataSaver.DataGetInt(dataName);
