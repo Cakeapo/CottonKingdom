@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Scr_BasicNPC_01.cs" />
     <Compile Include="Assets\Scripts\Scr_DataSaver_01.cs" />
     <Compile Include="Assets\Scripts\Scr_DataSaver_02.cs" />
+    <Compile Include="Assets\Scripts\Scr_GameManager_01.cs" />
     <None Include="Assets\Misc\PlayerPrefsEditor\README.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Git/CottonKingdom/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
