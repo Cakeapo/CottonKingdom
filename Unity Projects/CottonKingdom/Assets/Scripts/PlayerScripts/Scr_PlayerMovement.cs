@@ -6,10 +6,10 @@ public class Scr_PlayerMovement : MonoBehaviour
 {
 
     public CharacterController characterController;
-    private Vector3 input;
+    public Vector3 input;
 
     public float runSpeed, walkSpeed, jumpForce, rotationSpeed;
-    private float moveSpeed;
+    public float moveSpeed;
     public bool isRunning;
 
     public Transform cameraPivot;
@@ -17,10 +17,13 @@ public class Scr_PlayerMovement : MonoBehaviour
     private float yVelocity;
     public float gravity;
 
+    public Scr_CharacterAnimation animScript;
+
     // Use this for initialization
     void Start ()
     {
         characterController = GetComponent<CharacterController>();
+        animScript = GetComponent<Scr_CharacterAnimation>();
 	}
 	
 	// Update is called once per frame
@@ -33,6 +36,7 @@ public class Scr_PlayerMovement : MonoBehaviour
             if (characterController.isGrounded)
             {
                 yVelocity = jumpForce;
+                animScript.Jump();
             }
         }
 
