@@ -59,8 +59,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\mouseHide.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerCamera.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\Scr_CharacterAnimation.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_PlayerCamera.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_PlayerMovement.cs" />
     <Reference Include="UnityEditor.StandardEvents">
