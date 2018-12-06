@@ -17,7 +17,12 @@ public class Scr_PlayerMovement : MonoBehaviour
     private float yVelocity;
     public float gravity;
 
+    private Vector3 moveVelocity = Vector3.zero;
+    private Vector3 velocity;
+
     public Scr_CharacterAnimation animScript;
+
+    public float airMoveReduction;
 
     // Use this for initialization
     void Start ()
@@ -29,7 +34,19 @@ public class Scr_PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        //input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        if (characterController.isGrounded)
+        {
+            moveVelocity = transform.TransformDirection(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"))) * moveSpeed;
+            yVelocity = 0;
+        }
+        else
+        {
+            //moveVelocity = transform.TransformDirection(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"))) * (moveSpeed / airMoveReduction);
+        }
+
+        yVelocity -= gravity * Time.deltaTime; // reduce y vel at rate of gravity
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -40,16 +57,10 @@ public class Scr_PlayerMovement : MonoBehaviour
             }
         }
 
-        if (characterController.isGrounded)
-        {
-            //yVelocity = 0;
-        }
-        else
-        {
-            yVelocity -= gravity * Time.deltaTime;
-        }
-
-        characterController.Move(transform.TransformDirection(input * moveSpeed * Time.deltaTime + yVelocity * Vector3.up * Time.deltaTime));
+        
+        velocity = moveVelocity + yVelocity * Vector3.up;
+        characterController.Move(velocity * Time.deltaTime);
+        //characterController.Move(transform.TransformDirection(input * moveSpeed * Time.deltaTime + yVelocity * Vector3.up * Time.deltaTime));
 
 
         //Check if walk input is pressed
@@ -62,7 +73,7 @@ public class Scr_PlayerMovement : MonoBehaviour
             moveSpeed = walkSpeed;
 
         //move relative to camera direction if there is a move input
-        if (input.magnitude != 0)
+        if (moveVelocity.magnitude != 0)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, cameraPivot.rotation, rotationSpeed * Time.deltaTime);
         }

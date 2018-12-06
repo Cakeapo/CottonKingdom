@@ -348,7 +348,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228167762}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -411,15 +411,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
   input: {x: 0, y: 0, z: 0}
-  runSpeed: 4
-  walkSpeed: 2
-  jumpForce: 8
+  runSpeed: 8
+  walkSpeed: 4
+  jumpForce: 10
   rotationSpeed: 5
   moveSpeed: 0
   isRunning: 0
   cameraPivot: {fileID: 1702654736}
   gravity: 30
   animScript: {fileID: 0}
+  airMoveReduction: 2
 --- !u!114 &228167768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,6 +581,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: d0328d8b122e40b46a054f43c1bfa05d, type: 2}
+    - target: {fileID: 100000, guid: e0ddc6fafdb80e64b8e704e3e7fd885f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0ddc6fafdb80e64b8e704e3e7fd885f, type: 3}
   m_IsPrefabParent: 0
@@ -735,6 +740,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeedX: 0
   rotationSpeedY: 0
+  rotX: 0
+  rotY: 0
   lowerLimit: -55
   upperLimit: 75
   playerHead: {fileID: 1539620368}

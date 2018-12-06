@@ -10,7 +10,7 @@ public class Scr_GameManager_01 : MonoBehaviour {
     public Image textboxImage, answerImage;
     private CanvasGroup textboxGrp, answerGrp;
     public Button btn_Tp, btn_MdTp, btn_MdBt, btn_Bt;
-    public bool canAnswer = false, close = false, interactedWith = false;
+    public bool canAnswer = false, close = false, activated = false, interactedWith = false;
 
 
 	// Use this for initialization
@@ -18,7 +18,7 @@ public class Scr_GameManager_01 : MonoBehaviour {
     {
         textboxGrp = textboxImage.GetComponent<CanvasGroup>();
         answerGrp = answerImage.GetComponent<CanvasGroup>();
-        canAnswer = close = interactedWith = false;
+        canAnswer = close = interactedWith = activated = false;
         //textboxImage.enabled = answerImage.enabled = (false);
         InteractionBoxStart();
         //AnswerBox(false);
@@ -28,18 +28,28 @@ public class Scr_GameManager_01 : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        /*
-        if(close == true && interactedWith == false)
+        
+        if(close == true)
         {
-            AnswerBox(false);
-            interactedWith = true;
+            if (activated == true)
+            {
+                if (interactedWith == true)
+                {
+                    AnswerBox(true);
+                    //interactedWith = true;
+                }
+                else
+                {
+                    AnswerBox(false);
+                }
+            }
         }
-        else if( close == false && interactedWith == true)
+        else
         {
             InteractionBoxStart();
             interactedWith = false;
         }
-        */
+        
 	}
 
     public void InteractionBoxStart()
@@ -47,6 +57,7 @@ public class Scr_GameManager_01 : MonoBehaviour {
         btn_Tp.interactable = btn_MdTp.interactable = btn_MdBt.interactable = btn_Bt.interactable = false;
         textboxGrp.interactable = false;
         answerGrp.interactable = false;
+        activated = false;
         answerGrp.alpha = textboxGrp.alpha = 0;
     }
 
