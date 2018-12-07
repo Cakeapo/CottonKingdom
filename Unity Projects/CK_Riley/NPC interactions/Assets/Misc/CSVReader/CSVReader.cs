@@ -113,12 +113,20 @@ public class CSVReader : MonoBehaviour
         }
         if(xAxis < outputGrid.GetLength(0) && yAxis < outputGrid.GetLength(1) )
         {
-            return outputGrid[xAxis, yAxis];
+            if (outputGrid[xAxis, yAxis] == null)
+            {
+                return "null";
+            }
+            else
+            {
+                return outputGrid[xAxis, yAxis];
+            }
+            //return outputGrid[xAxis, yAxis];
             
         }
         else
         {
-            return null;
+            return "null";
         }
         
     }

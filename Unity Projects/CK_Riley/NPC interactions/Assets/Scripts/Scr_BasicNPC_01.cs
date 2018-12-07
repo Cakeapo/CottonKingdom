@@ -80,11 +80,20 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
             {
                 hasInteracted = true;
                 scr_GameManager.interactedWith = !scr_GameManager.interactedWith;
+                scr_GameManager.ReplyOptions(GetComponent<CSVReader>().TextLine(interactionCounter / 2, 1).ToString(),
+                    GetComponent<CSVReader>().TextLine(interactionCounter / 2, 2).ToString(),
+                    GetComponent<CSVReader>().TextLine(interactionCounter / 2, 3).ToString(),
+                    GetComponent<CSVReader>().TextLine(interactionCounter / 2, 4).ToString());
                 interactionCounter +=1;
             }
+
+
         }
 
-        if (GetComponent<CSVReader>().TextLine(interactionCounter/2, 0) == null)
+
+
+
+        if (GetComponent<CSVReader>().TextLine(interactionCounter/2, 0) == null || GetComponent<CSVReader>().TextLine(interactionCounter / 2, 0) == "")
         {
             textBox.text = "And that's all he wrote...";
         }
@@ -133,14 +142,18 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
     {
         if (other.transform.tag == playerTag)
         {
-            scr_GameManager.close = scr_GameManager.canAnswer = scr_GameManager.interactedWith = false;
-            isInteractable = false;
-            isInteracting = false;
-            print("Interaction finished with " + dataName + ", " + dataSaver.DataGetInt(dataName));
+            PlayerExits();
         }
     }
 
-
+    public void PlayerExits()
+    {
+        interactionCounter = 0;
+        scr_GameManager.close = scr_GameManager.canAnswer = scr_GameManager.interactedWith = false;
+        isInteractable = false;
+        isInteracting = false;
+        print("Interaction finished with " + dataName + ", " + dataSaver.DataGetInt(dataName));
+    }
 
 
 
