@@ -1350,12 +1350,13 @@ MonoBehaviour:
   player: {fileID: 1918353807}
   textboxImage: {fileID: 1064436703}
   answerImage: {fileID: 400343028}
-  btn_Tp: {fileID: 602395918}
-  btn_MdTp: {fileID: 1355483436}
-  btn_MdBt: {fileID: 1781870501}
-  btn_Bt: {fileID: 561796625}
+  btn_Tp: {fileID: 602395916}
+  btn_MdTp: {fileID: 1355483434}
+  btn_MdBt: {fileID: 1781870499}
+  btn_Bt: {fileID: 561796623}
   canAnswer: 0
   close: 0
+  activated: 0
   interactedWith: 0
 --- !u!1 &1617737365
 GameObject:
@@ -1445,6 +1446,7 @@ GameObject:
   - component: {fileID: 1665515390}
   - component: {fileID: 1665515396}
   - component: {fileID: 1665515391}
+  - component: {fileID: 1665515397}
   m_Layer: 0
   m_Name: NPC_Test
   m_TagString: Untagged
@@ -1477,11 +1479,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasInteracted: 0
   isInteractable: 0
+  isInteracting: 0
   hasInformation: 1
   interactionTotal: 0
   newInteractionsTotal: 0
   dataName: NPC_Jeff
   playerTag: Player
+  gameManager: {fileID: 1609773183}
+  interactionCounter: 0
   info: {fileID: 355479661}
   popup: {fileID: 19905141}
 --- !u!65 &1665515392
@@ -1564,6 +1569,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88bf81045e3bf84bbe3c379c0ac03d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1665515397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1665515389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2bb5b5cc37271c44bd7940f521230ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csvFile: {fileID: 4900000, guid: c7a86e1ac47f1d74daab4d806aa454d7, type: 3}
 --- !u!1 &1781870499
 GameObject:
   m_ObjectHideFlags: 0

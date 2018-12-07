@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Misc\CSVReader\CSVReader.cs" />
     <Compile Include="Assets\Misc\PlayerPrefsEditor\PlayerPrefsUtility.cs" />
     <Compile Include="Assets\Misc\PlayerPrefsEditor\SimpleEncryption.cs" />
     <Compile Include="Assets\Scripts\Scr_BasicNPC_01.cs" />
