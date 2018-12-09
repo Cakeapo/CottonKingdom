@@ -21,6 +21,7 @@ public class Scr_Player_Controller : MonoBehaviour
             return;
 
         GetLocomotionInput();
+        HandleActionInput();
 
         Scr_Player_Motor.instance.UpdateMotor();
 	}
@@ -29,6 +30,7 @@ public class Scr_Player_Controller : MonoBehaviour
     {
         var deadZone = 0.1f;
 
+        Scr_Player_Motor.instance.verticalVelocity = Scr_Player_Motor.instance.moveVector.y;
         Scr_Player_Motor.instance.moveVector = Vector3.zero;
 
         if(Input.GetAxis("Vertical") > deadZone || Input.GetAxis("Vertical") < -deadZone)
@@ -37,5 +39,16 @@ public class Scr_Player_Controller : MonoBehaviour
         if (Input.GetAxis("Horizontal") > deadZone || Input.GetAxis("Horizontal") < -deadZone)
             Scr_Player_Motor.instance.moveVector += new Vector3(Input.GetAxis("Horizontal"), 0, 0);
 
+    }
+
+    void HandleActionInput()
+    {
+        if (Input.GetButton("Jump"))
+            Jump();
+    }
+
+    void Jump()
+    {
+        Scr_Player_Motor.instance.Jump();
     }
 }
