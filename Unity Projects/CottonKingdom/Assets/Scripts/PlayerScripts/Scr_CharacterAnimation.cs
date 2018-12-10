@@ -5,23 +5,23 @@ using UnityEngine;
 public class Scr_CharacterAnimation : MonoBehaviour
 {
     public Animator anim;
-    public Scr_PlayerMovement playerMovement;
+    public Scr_Player_Motor playerMovement;
 
     public float moveForward, moveStrafe;
 
 	// Use this for initialization
 	void Start ()
     {
-        playerMovement = GetComponent<Scr_PlayerMovement>();
+        playerMovement = GetComponent<Scr_Player_Motor>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        moveForward = playerMovement.input.z;
-        moveStrafe = playerMovement.input.x;
+        moveForward = playerMovement.moveVector.z;
+        moveStrafe = playerMovement.moveVector.x;
 
-        if (playerMovement.isRunning)
+        if (playerMovement)
         {
             anim.SetBool("Walking", false);
         }
