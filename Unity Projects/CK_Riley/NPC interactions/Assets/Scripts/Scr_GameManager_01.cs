@@ -12,10 +12,10 @@ public class Scr_GameManager_01 : MonoBehaviour {
     public GameObject btn_Tp, btn_MdTp, btn_MdBt, btn_Bt;
     public bool canAnswer = false, close = false, activated = false, interactedWith = false;
 
-
 	// Use this for initialization
 	void Start ()
     {
+        
         textboxGrp = textboxImage.GetComponent<CanvasGroup>();
         answerGrp = answerImage.GetComponent<CanvasGroup>();
         canAnswer = close = interactedWith = activated = false;
