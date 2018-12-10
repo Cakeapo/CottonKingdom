@@ -484,10 +484,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 4140427172280032, guid: 988db0b942777164392caf5896d6298b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -135
-      objectReference: {fileID: 0}
     - target: {fileID: 114698560947264908, guid: 988db0b942777164392caf5896d6298b,
         type: 2}
       propertyPath: gameManager
