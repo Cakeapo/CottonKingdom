@@ -59,13 +59,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Helper.cs" />
     <Compile Include="Assets\Scripts\mouseHide.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Camera.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_CharacterAnimation.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Controller.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Motor.cs" />
-    <Compile Include="Assets\Scripts\PlayerScripts\Scr_PlayerCamera.cs" />
-    <Compile Include="Assets\Scripts\PlayerScripts\Scr_PlayerMovement.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Users/845859902/Documents/GitHub/CK/CottonKingdom/Unity Projects/CottonKingdom/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
