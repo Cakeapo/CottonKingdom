@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Helper.cs" />
     <Compile Include="Assets\Scripts\mouseHide.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\Scr_ArmourParent.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Camera.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_CharacterAnimation.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Controller.cs" />

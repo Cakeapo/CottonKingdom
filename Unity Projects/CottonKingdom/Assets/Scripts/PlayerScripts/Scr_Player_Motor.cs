@@ -6,7 +6,9 @@ public class Scr_Player_Motor : MonoBehaviour
 {
     public static Scr_Player_Motor instance;
 
-    public float moveSpeed = 10;
+    public float forwardSpeed = 10;
+    public float backwardSpeed = 5;
+    public float strafeSpeed = 7;
     public float jumpSpeed = 6f;
     public float gravity = 21f;
     public float terminalVelocity = 20f;
@@ -101,5 +103,12 @@ public class Scr_Player_Motor : MonoBehaviour
                 Camera.main.transform.eulerAngles.y,
                 transform.eulerAngles.z);
         }
+    }
+
+    float moveSpeed()
+    {
+        var curMoveSpeed = 0;
+
+        return curMoveSpeed;
     }
 }
