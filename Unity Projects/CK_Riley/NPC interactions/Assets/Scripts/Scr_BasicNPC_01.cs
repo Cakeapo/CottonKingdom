@@ -13,6 +13,8 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
     [Space(5)]
     public string dataName, playerTag;
 
+    [Space(10)]
+
     [Space(15)]
 
     public GameObject gameManager;
@@ -26,7 +28,7 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
     [Space(5)]
     public GameObject info, popup;
     //public ParticleSystem popUpParticle;
-    Animator anim;
+    Animator anim, waveAnim;
 
 
     // Use this for initialization
@@ -34,7 +36,7 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
     {
         scr_GameManager = gameManager.GetComponent<Scr_GameManager_01>();
         textBox = scr_GameManager.textboxImage.GetComponentInChildren<Text>();
-
+        waveAnim = GetComponent<Animator>();
         LoadData();
 
     }
@@ -54,6 +56,7 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
             //print("Hi.");
             //popUpParticle.Play(true);  play anim
             anim.SetBool("CanInteract", true);
+            waveAnim.SetBool("HasInfo",true);
             if (Input.GetAxis("Interact") > 0)
             {
                 print("NPC Interaction_01");
@@ -68,6 +71,7 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
         {
             //popUpParticle.Play(false);    dont play anim
             anim.SetBool("CanInteract", false);
+            waveAnim.SetBool("HasInfo", false);
         }
 
         if (isInteracting == true)
