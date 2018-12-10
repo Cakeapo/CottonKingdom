@@ -28,15 +28,18 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
     [Space(5)]
     public GameObject info, popup;
     //public ParticleSystem popUpParticle;
-    Animator anim, waveAnim;
+    public Animator anim, waveAnim;
 
 
     // Use this for initialization
     void Start ()
     {
+        anim = gameObject.GetComponentInChildren<Animator>();
+        waveAnim = gameObject.GetComponent<Animator>();
+
         scr_GameManager = gameManager.GetComponent<Scr_GameManager_01>();
         textBox = scr_GameManager.textboxImage.GetComponentInChildren<Text>();
-        waveAnim = GetComponent<Animator>();
+        
         LoadData();
 
     }

@@ -62,6 +62,12 @@
     <Compile Include="Assets\Misc\CSVReader\CSVReader.cs" />
     <Compile Include="Assets\Misc\PlayerPrefsEditor\PlayerPrefsUtility.cs" />
     <Compile Include="Assets\Misc\PlayerPrefsEditor\SimpleEncryption.cs" />
+    <Compile Include="Assets\Scripts\Helper.cs" />
+    <Compile Include="Assets\Scripts\mouseHide.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\Scr_Camera.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\Scr_CharacterAnimation.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Controller.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Motor.cs" />
     <Compile Include="Assets\Scripts\Scr_BasicNPC_01.cs" />
     <Compile Include="Assets\Scripts\Scr_DataSaver_01.cs" />
     <Compile Include="Assets\Scripts\Scr_DataSaver_02.cs" />
