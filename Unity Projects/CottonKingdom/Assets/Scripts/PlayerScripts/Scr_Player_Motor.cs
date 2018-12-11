@@ -9,13 +9,14 @@ public class Scr_Player_Motor : MonoBehaviour
     public float forwardSpeed = 10;
     public float backwardSpeed = 5;
     public float strafeSpeed = 7;
+    public float slideSpeed = 10f;
     public float jumpSpeed = 6f;
     public float gravity = 21f;
     public float terminalVelocity = 20f;
     public float slideThreshold = 0.6f;
     public float maxControllableSlideMagnitude = 0.4f;
 
-    public Vector3 slideDirection;
+    private Vector3 slideDirection;
 
     public Vector3 moveVector { get; set; }
     public float verticalVelocity { get; set; }
@@ -44,7 +45,7 @@ public class Scr_Player_Motor : MonoBehaviour
         ApplySlide();
 
         // Multiply moveVector by moveSpeed
-        moveVector *= moveSpeed;
+        moveVector *= moveSpeed();
 
         // Reapply vertical velocity to moveVector.y
         moveVector = new Vector3(moveVector.x, verticalVelocity, moveVector.z);
@@ -75,7 +76,7 @@ public class Scr_Player_Motor : MonoBehaviour
 
         RaycastHit hitInfo;
 
-        if(Physics.Raycast(transform.position + Vector3.up, Vector3.down, out hitInfo))
+        if(Physics.Raycast(transform.position, Vector3.down, out hitInfo))
         {
             if (hitInfo.normal.y < slideThreshold)
                 slideDirection = new Vector3(hitInfo.normal.x, -hitInfo.normal.y, hitInfo.normal.z);
@@ -107,7 +108,41 @@ public class Scr_Player_Motor : MonoBehaviour
 
     float moveSpeed()
     {
-        var curMoveSpeed = 0;
+        var curMoveSpeed = 0f;
+
+        switch (Scr_Player_Animator.instance.moveDirection)
+        {
+            case Scr_Player_Animator.Direction.stationary:
+                curMoveSpeed = 0;
+                break;
+            case Scr_Player_Animator.Direction.forward:
+                curMoveSpeed = forwardSpeed;
+                break;
+            case Scr_Player_Animator.Direction.backward:
+                curMoveSpeed = backwardSpeed;
+                break;
+            case Scr_Player_Animator.Direction.left:
+                curMoveSpeed = strafeSpeed;
+                break;
+            case Scr_Player_Animator.Direction.right:
+                curMoveSpeed = strafeSpeed;
+                break;
+            case Scr_Player_Animator.Direction.leftForward:
+                curMoveSpeed = forwardSpeed;
+                break;
+            case Scr_Player_Animator.Direction.rightForward:
+                curMoveSpeed = forwardSpeed;
+                break;
+            case Scr_Player_Animator.Direction.leftBackward:
+                curMoveSpeed = backwardSpeed;
+                break;
+            case Scr_Player_Animator.Direction.rightBackward:
+                curMoveSpeed = backwardSpeed;
+                break;
+        }
+
+        if (slideDirection.magnitude > 0)
+            curMoveSpeed = slideSpeed;
 
         return curMoveSpeed;
     }
