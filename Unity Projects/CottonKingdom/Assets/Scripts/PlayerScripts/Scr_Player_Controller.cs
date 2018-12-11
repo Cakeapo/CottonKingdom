@@ -39,6 +39,7 @@ public class Scr_Player_Controller : MonoBehaviour
         if (Input.GetAxis("Horizontal") > deadZone || Input.GetAxis("Horizontal") < -deadZone)
             Scr_Player_Motor.instance.moveVector += new Vector3(Input.GetAxis("Horizontal"), 0, 0);
 
+        Scr_Player_Animator.instance.DetermineCurrentMoveDirection();
     }
 
     void HandleActionInput()
