@@ -6,22 +6,32 @@ public class Scr_Player_Motor : MonoBehaviour
 {
     public static Scr_Player_Motor instance;
 
-    public float forwardSpeed = 10;
+    public float runSpeed = 10;
     public float backwardSpeed = 5;
-    public float strafeSpeed = 7;
+    public float walkSpeed = 6;
     public float slideSpeed = 10f;
+    public float jumpLenience = 0.2f;
     public float jumpSpeed = 6f;
     public float gravity = 21f;
     public float terminalVelocity = 20f;
     public float slideThreshold = 0.6f;
     public float maxControllableSlideMagnitude = 0.4f;
+    // float airMovementReduction = 0.5f;
+    public float dashMultiplier = 5f;
+    public float chargeMultiplier = 2.5f;
+    public float chargeTurnReduction = 10f;
+    public float overSpeedReduce = 0.5f;
 
     private Vector3 slideDirection;
+    private float timeSpentAirborn;
+    public float activeChargeMultipler;
 
     public Vector3 moveVector { get; set; }
     public float verticalVelocity { get; set; }
+    public float forwardSpeed { get; set; }
+    public bool Charging { get; set; }
 
-	void Awake()
+    void Awake()
     {
         instance = this;
 	}
@@ -45,7 +55,7 @@ public class Scr_Player_Motor : MonoBehaviour
         ApplySlide();
 
         // Multiply moveVector by moveSpeed
-        moveVector *= moveSpeed();
+        moveVector *= moveSpeed() * SpeedMultiply();
 
         // Reapply vertical velocity to moveVector.y
         moveVector = new Vector3(moveVector.x, verticalVelocity, moveVector.z);
@@ -56,6 +66,7 @@ public class Scr_Player_Motor : MonoBehaviour
         // Move character in world space
         Scr_Player_Controller.characterController.Move(moveVector * Time.deltaTime);
 
+        CheckAirbornTime();
     }
 
     void ApplyGravity()
@@ -92,13 +103,19 @@ public class Scr_Player_Motor : MonoBehaviour
 
     public void Jump()
     {
-        if (Scr_Player_Controller.characterController.isGrounded)
+        if(timeSpentAirborn < jumpLenience)
+        {
             verticalVelocity = jumpSpeed;
+            timeSpentAirborn += jumpLenience;
+        }
+
+//        if (Scr_Player_Controller.characterController.isGrounded)
+//            verticalVelocity = jumpSpeed;
     }
 
     public void SnapAlignCharacterWithCamera()
     {
-        if(moveVector.x != 0 || moveVector.z != 0)
+        if (moveVector.x != 0 || moveVector.z != 0)
         {
             transform.rotation = Quaternion.Euler(transform.eulerAngles.x,
                 Camera.main.transform.eulerAngles.y,
@@ -106,7 +123,7 @@ public class Scr_Player_Motor : MonoBehaviour
         }
     }
 
-    float moveSpeed()
+    public float moveSpeed()
     {
         var curMoveSpeed = 0f;
 
@@ -122,10 +139,10 @@ public class Scr_Player_Motor : MonoBehaviour
                 curMoveSpeed = backwardSpeed;
                 break;
             case Scr_Player_Animator.Direction.left:
-                curMoveSpeed = strafeSpeed;
+                curMoveSpeed = forwardSpeed;
                 break;
             case Scr_Player_Animator.Direction.right:
-                curMoveSpeed = strafeSpeed;
+                curMoveSpeed = forwardSpeed;
                 break;
             case Scr_Player_Animator.Direction.leftForward:
                 curMoveSpeed = forwardSpeed;
@@ -145,5 +162,43 @@ public class Scr_Player_Motor : MonoBehaviour
             curMoveSpeed = slideSpeed;
 
         return curMoveSpeed;
+    }
+
+    public float SpeedMultiply()
+    {
+        if (Charging)
+        {
+            if (activeChargeMultipler > chargeMultiplier)
+            {
+                activeChargeMultipler -= overSpeedReduce * Time.deltaTime;
+            }
+        }
+        else
+        {
+            if(activeChargeMultipler > 1)
+            {
+                activeChargeMultipler -= overSpeedReduce * Time.deltaTime;
+            }
+            else
+            {
+                activeChargeMultipler = 1;
+            }
+        }
+
+        return activeChargeMultipler;
+    }
+
+    public void Dash()
+    {
+        if (!Charging)
+            activeChargeMultipler = dashMultiplier;
+    }
+
+    void CheckAirbornTime()
+    {
+        if (!Scr_Player_Controller.characterController.isGrounded)
+            timeSpentAirborn += Time.deltaTime;
+        else
+            timeSpentAirborn = 0;
     }
 }

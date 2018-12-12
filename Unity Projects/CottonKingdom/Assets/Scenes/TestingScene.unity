@@ -439,15 +439,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e7e0db34603514eb4732e04dcb04b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 10
-  backwardSpeed: 5
-  strafeSpeed: 7
-  slideSpeed: 5
+  runSpeed: 10
+  backwardSpeed: 6
+  walkSpeed: 6
+  slideSpeed: 8
+  jumpLenience: 0.1
   jumpSpeed: 8
   gravity: 21
   terminalVelocity: 20
   slideThreshold: 0.7
   maxControllableSlideMagnitude: 0.4
+  dashMultiplier: 5
+  chargeMultiplier: 2.5
+  chargeTurnReduction: 10
+  overSpeedReduce: 20
+  activeChargeMultipler: 0
 --- !u!114 &228167770
 MonoBehaviour:
   m_ObjectHideFlags: 0
