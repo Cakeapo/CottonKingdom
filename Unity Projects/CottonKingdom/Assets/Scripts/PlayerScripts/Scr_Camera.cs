@@ -61,8 +61,6 @@ public class Scr_Camera : MonoBehaviour
             count++;
         } while (CheckIfOccluded(count));
 
-        //CheckCameraPoints(TargetLookAt.position, desiredPosition);
-
         UpdatePosition();
     }
 
