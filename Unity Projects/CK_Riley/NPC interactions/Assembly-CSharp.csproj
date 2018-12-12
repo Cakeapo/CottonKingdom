@@ -101,6 +101,7 @@
     <Compile Include="Assets\Misc\Node_Editor_Framework-develop\Node_Editor\Nodes\FloatCalc\DisplayNode.cs" />
     <Compile Include="Assets\Misc\Node_Editor_Framework-develop\Node_Editor\Nodes\FloatCalc\InputNode.cs" />
     <Compile Include="Assets\Misc\Node_Editor_Framework-develop\Node_Editor\Utilities\EditorLoadingControl.cs" />
+    <Compile Include="Assets\Misc\Node_Editor_Framework-develop\Node_Editor\Utilities\EditorLoadingControl1.cs" />
     <Compile Include="Assets\Misc\Node_Editor_Framework-develop\Node_Editor\Utilities\GUI\GUIScaleUtility.cs" />
     <Compile Include="Assets\Misc\Node_Editor_Framework-develop\Node_Editor\Utilities\GUI\OverlayGUI.cs" />
     <Compile Include="Assets\Misc\Node_Editor_Framework-develop\Node_Editor\Utilities\GUI\RTEditorGUI.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Assets\Misc\Node_Editor_Framework-Examples-Dialogue-System\ExampleDialogSystem\Source\Testing\TestScripts.cs" />
     <Compile Include="Assets\Misc\PlayerPrefsEditor\PlayerPrefsUtility.cs" />
     <Compile Include="Assets\Misc\PlayerPrefsEditor\SimpleEncryption.cs" />
+    <Compile Include="Assets\Scripts\DiagScripts\Scr_StartScript.cs" />
     <Compile Include="Assets\Scripts\Helper.cs" />
     <Compile Include="Assets\Scripts\mouseHide.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Camera.cs" />

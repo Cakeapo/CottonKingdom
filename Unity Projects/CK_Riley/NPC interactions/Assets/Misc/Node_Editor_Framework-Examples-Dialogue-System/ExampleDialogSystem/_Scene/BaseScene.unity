@@ -300,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _messageBoxPrefab: {fileID: 133358, guid: 13a9a5aec367643459a50a428939c44f, type: 2}
   _canvasObject: {fileID: 822368266}
-  dialogCanvas: {fileID: 11400000, guid: 907bad445d097794fa15df164731ef93, type: 2}
+  dialogCanvas: {fileID: 11400000, guid: e695df739fb291e41bcbe0e04e791045, type: 2}
 --- !u!4 &905757385
 Transform:
   m_ObjectHideFlags: 0
