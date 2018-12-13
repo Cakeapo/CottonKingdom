@@ -10,6 +10,8 @@ public class Scr_Player_Motor : MonoBehaviour
     public float backwardSpeed = 5;
     public float walkSpeed = 6;
     public float slideSpeed = 10f;
+    public float chargeSpeed = 25f;
+    public float chargeTurnRate = 0.5f;
     public float jumpLenience = 0.2f;
     public float jumpSpeed = 6f;
     public float gravity = 21f;
@@ -44,6 +46,8 @@ public class Scr_Player_Motor : MonoBehaviour
 
     public void ProcessMotion()
     {
+        Charge();
+
         // Transform moveVector to world space
         moveVector = transform.TransformDirection(moveVector);
 
@@ -55,7 +59,7 @@ public class Scr_Player_Motor : MonoBehaviour
         ApplySlide();
 
         // Multiply moveVector by moveSpeed
-        moveVector *= moveSpeed() * SpeedMultiply();
+        moveVector *= moveSpeed();
 
         // Reapply vertical velocity to moveVector.y
         moveVector = new Vector3(moveVector.x, verticalVelocity, moveVector.z);
@@ -115,11 +119,14 @@ public class Scr_Player_Motor : MonoBehaviour
 
     public void SnapAlignCharacterWithCamera()
     {
-        if (moveVector.x != 0 || moveVector.z != 0)
+        if (!Charging)
         {
-            transform.rotation = Quaternion.Euler(transform.eulerAngles.x,
-                Camera.main.transform.eulerAngles.y,
-                transform.eulerAngles.z);
+            if (moveVector.x != 0 || moveVector.z != 0)
+            {
+                transform.rotation = Quaternion.Euler(transform.eulerAngles.x,
+                    Camera.main.transform.eulerAngles.y,
+                    transform.eulerAngles.z);
+            }
         }
     }
 
@@ -161,37 +168,22 @@ public class Scr_Player_Motor : MonoBehaviour
         if (slideDirection.magnitude > 0)
             curMoveSpeed = slideSpeed;
 
+        if (Charging)
+            curMoveSpeed = chargeSpeed;
+
         return curMoveSpeed;
     }
 
-    public float SpeedMultiply()
+    public void Charge()
     {
         if (Charging)
         {
-            if (activeChargeMultipler > chargeMultiplier)
-            {
-                activeChargeMultipler -= overSpeedReduce * Time.deltaTime;
-            }
-        }
-        else
-        {
-            if(activeChargeMultipler > 1)
-            {
-                activeChargeMultipler -= overSpeedReduce * Time.deltaTime;
-            }
-            else
-            {
-                activeChargeMultipler = 1;
-            }
-        }
+            transform.rotation = Quaternion.Euler(transform.eulerAngles.x,
+                    transform.eulerAngles.y + (moveVector.x * chargeTurnRate * Time.deltaTime),
+                    transform.eulerAngles.z);
 
-        return activeChargeMultipler;
-    }
-
-    public void Dash()
-    {
-        if (!Charging)
-            activeChargeMultipler = dashMultiplier;
+            moveVector = new Vector3(0, 0, 1);
+        }
     }
 
     void CheckAirbornTime()

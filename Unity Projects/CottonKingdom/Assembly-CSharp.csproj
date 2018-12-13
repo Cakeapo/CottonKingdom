@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_ArmourParent.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Camera.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_CharacterAnimation.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\Scr_CharacterController.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Animator.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Controller.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Motor.cs" />

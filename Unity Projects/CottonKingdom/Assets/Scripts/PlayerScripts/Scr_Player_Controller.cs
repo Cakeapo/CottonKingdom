@@ -52,11 +52,8 @@ public class Scr_Player_Controller : MonoBehaviour
         else
             Run();
 
-        if (Input.GetButton("Charge"))
+        if (Input.GetButtonDown("Charge"))
             Charge();
-
-        if (Input.GetButtonUp("Charge"))
-            EndCharge();
     }
 
     void Jump()
@@ -76,13 +73,7 @@ public class Scr_Player_Controller : MonoBehaviour
 
     void Charge()
     {
-        Scr_Player_Motor.instance.Dash();
-        Scr_Player_Motor.instance.Charging = true;
-    }
-
-    void EndCharge()
-    {
-        Scr_Player_Motor.instance.Charging = false;
+        Scr_Player_Motor.instance.Charging = !Scr_Player_Motor.instance.Charging;
     }
 
 }

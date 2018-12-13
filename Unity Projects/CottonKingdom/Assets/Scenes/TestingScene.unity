@@ -443,6 +443,8 @@ MonoBehaviour:
   backwardSpeed: 6
   walkSpeed: 6
   slideSpeed: 8
+  chargeSpeed: 25
+  chargeTurnRate: 15
   jumpLenience: 0.1
   jumpSpeed: 8
   gravity: 21
@@ -793,6 +795,14 @@ Prefab:
     - target: {fileID: 100006, guid: 5606afdd6b245a447945c11574021f92, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5606afdd6b245a447945c11574021f92, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5606afdd6b245a447945c11574021f92, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -1.4810997e-31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5606afdd6b245a447945c11574021f92, type: 3}

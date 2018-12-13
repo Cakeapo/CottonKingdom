@@ -114,8 +114,8 @@ public class Scr_Camera : MonoBehaviour
                 isOccluded = true;
                 distance -= occlusionDistanceStep;
 
-                if (distance < 0.25f) //TEST THIS NUMBER
-                    distance = 0.25f;
+                if (distance < 0.1f) //TEST THIS NUMBER
+                    distance = 0.1f;
             }
             else
                 distance = nearestDistance - Camera.main.nearClipPlane;
