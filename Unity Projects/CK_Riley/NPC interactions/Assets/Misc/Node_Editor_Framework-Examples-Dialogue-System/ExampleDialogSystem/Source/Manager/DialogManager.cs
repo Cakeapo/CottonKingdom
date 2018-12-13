@@ -105,6 +105,38 @@ public class DialogManager : MonoBehaviour
 		GiveInputToDialog(dialogId, optionSelected);
 		_messageBoxes[dialogId].SetData(GetNodeForId(dialogId));
 	}
+
+
+
+
+
+    public void Reload()
+    {
+        _messageBoxes.Clear();
+        
+
+        _messageBoxes = new Dictionary<int, MessageBoxHud>();
+        _dialogIdTracker = new Dictionary<int, DialogNodeCanvas>();
+        _dialogIdTracker.Clear();
+
+        if (dialogCanvas)
+        {
+            foreach (int id in dialogCanvas.GetAllDialogId())
+            {
+                _dialogIdTracker.Add(id, dialogCanvas);
+            }
+        }
+        else
+        {
+            foreach (DialogNodeCanvas nodeCanvas in Resources.LoadAll<DialogNodeCanvas>("Saves/"))
+            {
+                foreach (int id in nodeCanvas.GetAllDialogId())
+                {
+                    _dialogIdTracker.Add(id, nodeCanvas);
+                }
+            }
+        }
+    }
 }
 
 public enum EDialogInputValue
