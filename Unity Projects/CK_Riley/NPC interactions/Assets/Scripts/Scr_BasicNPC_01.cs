@@ -23,10 +23,14 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
     public int interactionCounter = 0;
 
     [Space(15)]
-
+    public DialogNodeCanvas dialogCanvas;   //this is where the indevidual NPC dialoug trees are stored
+    [Space(5)]
+    public GameObject testObj;
+    private DiagScripts diagScripts;
     private Scr_DataSaver_01 dataSaver;
     [Space(5)]
     public GameObject info, popup;
+    public Vector3 player;
     //public ParticleSystem popUpParticle;
     public Animator anim, waveAnim;
 
@@ -34,6 +38,8 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        diagScripts = testObj.GetComponent<DiagScripts>();
+
         anim = gameObject.GetComponentInChildren<Animator>();
         waveAnim = gameObject.GetComponent<Animator>();
 
@@ -59,6 +65,7 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
             //print("Hi.");
             //popUpParticle.Play(true);  play anim
             anim.SetBool("CanInteract", true);
+            gameObject.transform.LookAt(player);
             waveAnim.SetBool("HasInfo",true);
             if (Input.GetAxis("Interact") > 0)
             {
@@ -73,6 +80,7 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
         else
         {
             //popUpParticle.Play(false);    dont play anim
+            gameObject.transform.LookAt(Vector3.zero);
             anim.SetBool("CanInteract", false);
             waveAnim.SetBool("HasInfo", false);
         }
@@ -134,16 +142,31 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
         print("Triggered.");
         if (other.transform.tag == playerTag)
         {
+            player = new Vector3(other.transform.position.x, player.y ,other.transform.position.z);
             isInteractable = true;
 
             scr_GameManager.close = true;
             scr_GameManager.canAnswer = false;
             scr_GameManager.interactedWith = true;
 
+            diagScripts.input = true;
+            diagScripts.dialogCanvas = dialogCanvas;
+
+
             dataSaver.DataSaveInt(dataName, interactionTotal += 1);
             print("Interactin with " + dataName + ", "+ dataSaver.DataGetInt(dataName));
         }
     }
+
+    /*
+    public void OnTrigger(Collider other)
+    {
+        if (other.transform.tag == playerTag)
+        {
+            player = new Vector3(other.transform.position.x, player.y, other.transform.position.z);
+        }
+    }
+    */
 
     public void OnTriggerExit(Collider other)
     {
@@ -159,6 +182,7 @@ public class Scr_BasicNPC_01 : MonoBehaviour {
         scr_GameManager.close = scr_GameManager.canAnswer = scr_GameManager.interactedWith = false;
         isInteractable = false;
         isInteracting = false;
+        diagScripts.input = false;
         print("Interaction finished with " + dataName + ", " + dataSaver.DataGetInt(dataName));
     }
 

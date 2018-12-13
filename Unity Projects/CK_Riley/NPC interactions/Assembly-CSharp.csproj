@@ -120,6 +120,7 @@
     <Compile Include="Assets\Misc\Node_Editor_Framework-Examples-Dialogue-System\ExampleDialogSystem\Source\MessageBox\MessageBoxHud.cs" />
     <Compile Include="Assets\Misc\Node_Editor_Framework-Examples-Dialogue-System\ExampleDialogSystem\Source\MessageBox\OptionsButtonHandler.cs" />
     <Compile Include="Assets\Misc\Node_Editor_Framework-Examples-Dialogue-System\ExampleDialogSystem\Source\MessageBox\OptionsHandler.cs" />
+    <Compile Include="Assets\Misc\Node_Editor_Framework-Examples-Dialogue-System\ExampleDialogSystem\Source\Testing\DiagScripts.cs" />
     <Compile Include="Assets\Misc\Node_Editor_Framework-Examples-Dialogue-System\ExampleDialogSystem\Source\Testing\TestScripts.cs" />
     <Compile Include="Assets\Misc\PlayerPrefsEditor\PlayerPrefsUtility.cs" />
     <Compile Include="Assets\Misc\PlayerPrefsEditor\SimpleEncryption.cs" />
