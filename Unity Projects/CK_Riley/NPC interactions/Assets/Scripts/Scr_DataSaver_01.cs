@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Scr_DataSaver_01 : MonoBehaviour {
 
+
     public void DataSaveInt(string dataName,  int dataValueInt)
     {
         PlayerPrefs.SetInt(dataName, dataValueInt);
