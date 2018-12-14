@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CottonKingdom", "Assembly-CSharp.csproj", "{59E1AD0E-3DC5-ECC5-5751-4E9C9A2B5EBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CottonKingdom", "Assembly-CSharp-Editor.csproj", "{2AAC7B79-6E74-5A11-DDF5-E5B9888F8797}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{59E1AD0E-3DC5-ECC5-5751-4E9C9A2B5EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59E1AD0E-3DC5-ECC5-5751-4E9C9A2B5EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59E1AD0E-3DC5-ECC5-5751-4E9C9A2B5EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AAC7B79-6E74-5A11-DDF5-E5B9888F8797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AAC7B79-6E74-5A11-DDF5-E5B9888F8797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AAC7B79-6E74-5A11-DDF5-E5B9888F8797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AAC7B79-6E74-5A11-DDF5-E5B9888F8797}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

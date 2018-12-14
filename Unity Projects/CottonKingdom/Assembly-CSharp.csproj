@@ -68,6 +68,15 @@
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Animator.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Controller.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Motor.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\EnableDepthBuffer.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\StylizedWater.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\StylizedWaterBlur.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\StylizedWaterRenderer.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\StylizedWaterResources.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\StylizedWaterShadowCaster.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\StylizedWaterUtilities.cs" />
+    <None Include="Assets\StylizedWater\Shaders\StylizedWater_Desktop.shader" />
+    <None Include="Assets\VertexColorTrees\Shaders\VertexColorUnlit.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Users/845859902/Documents/GitHub/CK/CottonKingdom/Unity Projects/CottonKingdom/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
