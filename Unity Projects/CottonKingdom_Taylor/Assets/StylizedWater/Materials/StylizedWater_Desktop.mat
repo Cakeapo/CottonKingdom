@@ -72,9 +72,9 @@ Material:
     - _FoamOpacity: 0.05
     - _FoamSize: 0
     - _FoamSpeed: 0.1
-    - _FoamTiling: 0.35
+    - _FoamTiling: 1.25
     - _Fresnelexponent: 2.6
-    - _Glossiness: 0.804
+    - _Glossiness: 0.5
     - _Gradient: 0
     - _HighlightPanning: 0
     - _IntersectionDistortion: 0.1
@@ -96,8 +96,8 @@ Material:
     - _RefractionAmount: 0.01
     - _RimDistance: 1.91
     - _RimDistortion: 0.4
-    - _RimSize: 3
-    - _Rimfalloff: 19
+    - _RimSize: 2
+    - _Rimfalloff: 30
     - _Rimtiling: 0.5
     - _SECONDARY_WAVES: 1
     - _SurfaceHighlight: 0
@@ -108,16 +108,16 @@ Material:
     - _TessPhongStrength: 0.5
     - _Tessellation: 20
     - _Tiling: 2.9489994
-    - _Transparency: 1
+    - _Transparency: 0.8
     - _USE_VC_INTERSECTION: 0
     - _Unlit: 0
     - _UseIntersectionFoam: 1
     - _UseIntersectionHighlight: 1
     - _WaveFoam: 0
-    - _WaveHeight: 0.011
-    - _WaveSize: 0.1
+    - _WaveHeight: 0
+    - _WaveSize: 0.10000002
     - _Wavefoam: 1
-    - _Wavesspeed: 0.75
+    - _Wavesspeed: 0.1
     - _Wavesstrength: 0.268
     - _Wavetint: -0.077
     - _Worldspacetiling: 0
@@ -127,4 +127,4 @@ Material:
     - _RimColor: {r: 1, g: 1, b: 1, a: 0.453}
     - _WaterColor: {r: 0.09294117, g: 0.5018823, b: 0.79, a: 0}
     - _WaterShallowColor: {r: 0.4228856, g: 0.8109453, b: 1, a: 1}
-    - _WaveDirection: {r: 1, g: 0, b: 0, a: 0}
+    - _WaveDirection: {r: -1, g: 0, b: -0.388, a: 0}
