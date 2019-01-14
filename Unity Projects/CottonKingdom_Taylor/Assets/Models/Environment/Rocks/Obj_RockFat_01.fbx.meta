@@ -3,11 +3,13 @@ guid: d8a01ac81c7653c4a9f4f156da209574
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: Obj_RockFat_01
+    100002: //RootNode
+    400000: Obj_RockFat_01
+    400002: //RootNode
     2100000: Mtl_RockFat_01
-    2300000: //RootNode
-    3300000: //RootNode
+    2300000: Obj_RockFat_01
+    3300000: Obj_RockFat_01
     4300000: Obj_RockFat_01
   externalObjects: {}
   materials:

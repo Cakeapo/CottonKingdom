@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 2560
     height: 1357
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -108,10 +108,10 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 1307
-  m_MinSize: {x: 913, y: 271}
-  m_MaxSize: {x: 22008, y: 10021}
+  m_MinSize: {x: 911, y: 271}
+  m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 102
+  controlID: 11
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -208,8 +208,8 @@ MonoBehaviour:
     y: 0
     width: 626
     height: 1307
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -242,14 +242,14 @@ MonoBehaviour:
     height: 1286
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 3438.3058089926094
+  lastFramingTime: 945.2051281743107
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.21885109, y: 9.086338, z: -1.4848914}
+    m_Target: {x: -0.7649746, y: 8.427904, z: -9.08136}
     speed: 2
-    m_Value: {x: 0.21885109, y: 9.086338, z: -1.4848914}
+    m_Value: {x: -0.7649746, y: 8.427904, z: -9.08136}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -277,13 +277,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.08136818, y: 0.90286624, z: -0.19710188, w: -0.37420076}
+    m_Target: {x: -0.10410915, y: 0.8751782, z: -0.21573605, w: -0.42112204}
     speed: 2
-    m_Value: {x: -0.08134119, y: 0.9025668, z: -0.1970365, w: -0.37407666}
+    m_Value: {x: -0.10407474, y: 0.8748889, z: -0.21566473, w: -0.42098284}
   m_Size:
-    m_Target: 12.484446
+    m_Target: 10.559764
     speed: 2
-    m_Value: 12.484446
+    m_Value: 10.559764
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -416,7 +416,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 18e4ffff00000000
+    m_ExpandedIDs: f0fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -477,7 +477,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Materials/Environment/Rocks
+    - Assets/Images/Environment/Bushes
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -489,7 +489,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: fa3e0000
     m_LastClickedID: 16122
-    m_ExpandedIDs: 5a3300009c340000e6340000f2400000
+    m_ExpandedIDs: 0000000074290000f4290000f22a0000462b0000fc2b00003c2c00005c2c0000862c00002e2d0000122f000050300000823b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -517,7 +517,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005a3300009c340000e634000088360000f24000000a4100001041000070410000764100007c410000844100008a41000090410000
+    m_ExpandedIDs: 0000000074290000f4290000f22a0000462b0000fc2b00003c2c00005c2c0000862c00002e2d0000122f000050300000823b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
