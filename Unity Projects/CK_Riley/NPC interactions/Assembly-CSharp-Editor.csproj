@@ -58,6 +58,14 @@
      <Compile Include="Assets\Misc\Node_Editor_Framework-develop\Editor\Node_Editor\RTNodeEditorInspector.cs" />
      <Compile Include="Assets\Misc\PlayerPrefsEditor\Editor\Mac\Plist.cs" />
      <Compile Include="Assets\Misc\PlayerPrefsEditor\Editor\PlayerPrefsEditor.cs" />
+     <Compile Include="Assets\Misc\UNotes\Editor\UNote.cs" />
+     <Compile Include="Assets\Misc\UNotes\Editor\UNoteEditWindow.cs" />
+     <Compile Include="Assets\Misc\UNotes\Editor\UNotesAbout.cs" />
+     <Compile Include="Assets\Misc\UNotes\Editor\UNotesHInventory.cs" />
+     <Compile Include="Assets\Misc\UNotes\Editor\UNotesOptionsWindow.cs" />
+     <Compile Include="Assets\Misc\UNotes\Editor\UNotesTestingWindow.cs" />
+     <Compile Include="Assets\Misc\UNotes\Editor\UNotesUtils.cs" />
+     <Compile Include="Assets\Misc\UNotes\Editor\UNotesWindow.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/GitHub/CottonKingdom/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
