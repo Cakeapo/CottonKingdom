@@ -111,7 +111,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 271}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 92
+  controlID: 115
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,14 +318,14 @@ MonoBehaviour:
     height: 1286
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 17614.497674366896
+  lastFramingTime: 355.5229246128302
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 82.08534, y: -1.2149428, z: -9.733611}
+    m_Target: {x: 82.74251, y: -11.737518, z: -30.611172}
     speed: 2
-    m_Value: {x: 82.08534, y: -1.2149428, z: -9.733611}
+    m_Value: {x: 82.74251, y: -11.737518, z: -30.611172}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -353,13 +353,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.09443126, y: -0.64440304, z: 0.08112181, w: -0.7544795}
+    m_Target: {x: 0.33221993, y: -0.23178682, z: 0.084200226, w: 0.9103901}
     speed: 2
-    m_Value: {x: -0.09443161, y: -0.6444054, z: 0.08112211, w: -0.7544823}
+    m_Value: {x: 0.33222076, y: -0.2317874, z: 0.084200434, w: 0.91039234}
   m_Size:
-    m_Target: 40.92236
+    m_Target: 143.84222
     speed: 2
-    m_Value: 40.92236
+    m_Value: 143.84222
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -552,7 +552,8 @@ MonoBehaviour:
     m_ScenePaths: []
     m_ShowAllHits: 0
     m_SearchArea: 0
-    m_Folders: []
+    m_Folders:
+    - Assets/Models/Buildings
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -564,7 +565,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: fa3e0000
     m_LastClickedID: 16122
-    m_ExpandedIDs: 00000000742900004e2e0000022f00000a320000cc32000058340000ca480000
+    m_ExpandedIDs: 00000000742900005c2e0000102f0000862f000078340000ea480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -592,7 +593,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000742900004e2e0000022f0000762f000058340000ca480000
+    m_ExpandedIDs: 00000000742900005c2e0000102f0000862f000028320000ea32000078340000ea480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
