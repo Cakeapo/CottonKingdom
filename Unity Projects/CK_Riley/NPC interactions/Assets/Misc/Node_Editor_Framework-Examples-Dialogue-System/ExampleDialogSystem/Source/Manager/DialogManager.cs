@@ -144,3 +144,11 @@ public enum EDialogInputValue
     Next = -2,
     Back = -1,
 }
+
+
+/*
+ * What still needs to be done is to enable the mouse and stop the player from being able to move around,
+ * a siple bool would be best, interaction bool that is switched on or off
+ 
+     
+     */
