@@ -130,6 +130,9 @@
     <Compile Include="Assets\Scripts\Helper.cs" />
     <Compile Include="Assets\Scripts\Items\Scr_AddToInv_01.cs" />
     <Compile Include="Assets\Scripts\Items\Scr_InvOpn_01.cs" />
+    <Compile Include="Assets\Scripts\Menu\Scr_Exit.cs" />
+    <Compile Include="Assets\Scripts\Menu\Scr_GameToHome_01.cs" />
+    <Compile Include="Assets\Scripts\Menu\Scr_ResetGame_01.cs" />
     <Compile Include="Assets\Scripts\Menu\Scr_UiMan_01.cs" />
     <Compile Include="Assets\Scripts\Menu\StartScript.cs" />
     <Compile Include="Assets\Scripts\mouseHide.cs" />
@@ -141,8 +144,26 @@
     <Compile Include="Assets\Scripts\Scr_DataSaver_01.cs" />
     <Compile Include="Assets\Scripts\Scr_DataSaver_02.cs" />
     <Compile Include="Assets\Scripts\Scr_GameManager_01.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\EnableDepthBuffer.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\StylizedWater.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\StylizedWaterBlur.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\StylizedWaterRenderer.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\StylizedWaterResources.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\StylizedWaterShadowCaster.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\StylizedWaterUtilities.cs" />
     <None Include="Assets\Misc\PlayerPrefsEditor\README.txt" />
+    <None Include="Assets\StylizedWater\Changelog.txt" />
+    <None Include="Assets\StylizedWater\Effects\Shaders\StylizedWater_Particle_Mobile.shader" />
+    <None Include="Assets\StylizedWater\Scripts\Textures\Normals\Readme.txt" />
+    <None Include="Assets\StylizedWater\Scripts\Resources\StylizedWaterReflectionBlur.shader" />
     <None Include="Assets\Misc\Node_Editor_Framework-develop\Node_Editor\Resources\Shader\LineShader.shader" />
+    <None Include="Assets\StylizedWater\Shaders\StylizedWater_Desktop.shader" />
+    <None Include="Assets\StylizedWater\Shaders\StylizedWater_Mobile.shader" />
+    <None Include="Assets\Fantasy Skybox\Readme.txt" />
+    <None Include="Assets\StylizedWater\Scripts\Textures\Intersection\Readme.txt" />
+    <None Include="Assets\StylizedWater\Scripts\Textures\Heightmap\Readme.txt" />
+    <None Include="Assets\StylizedWater\Effects\Shaders\StylizedWater_Particle_Desktop.shader" />
+    <None Include="Assets\VertexColorTrees\Shaders\VertexColorUnlit.shader" />
     <None Include="Assets\Misc\Node_Editor_Framework-develop\Node_Editor\Utilities\link.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Users/845863027/Git/CottonKingdom/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

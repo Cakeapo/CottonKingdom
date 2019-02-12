@@ -68,14 +68,10 @@
     <Compile Include="Assets\Misc\Node_Editor_Framework-develop\Editor\Node_Editor\RTNodeEditorInspector.cs" />
     <Compile Include="Assets\Misc\PlayerPrefsEditor\Editor\Mac\Plist.cs" />
     <Compile Include="Assets\Misc\PlayerPrefsEditor\Editor\PlayerPrefsEditor.cs" />
-    <Compile Include="Assets\Misc\UNotes\Editor\UNote.cs" />
-    <Compile Include="Assets\Misc\UNotes\Editor\UNoteEditWindow.cs" />
-    <Compile Include="Assets\Misc\UNotes\Editor\UNotesAbout.cs" />
-    <Compile Include="Assets\Misc\UNotes\Editor\UNotesHInventory.cs" />
-    <Compile Include="Assets\Misc\UNotes\Editor\UNotesOptionsWindow.cs" />
-    <Compile Include="Assets\Misc\UNotes\Editor\UNotesTestingWindow.cs" />
-    <Compile Include="Assets\Misc\UNotes\Editor\UNotesUtils.cs" />
-    <Compile Include="Assets\Misc\UNotes\Editor\UNotesWindow.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\Editor\StylizedWaterCore.cs" />
+    <Compile Include="Assets\StylizedWater\Scripts\Editor\StylizedWaterInspector.cs" />
+    <None Include="Assets\StylizedWater\Scripts\Editor\SWS_ShaderMapRenderer.shader" />
+    <None Include="Assets\StylizedWater\Scripts\Editor\SWS_NormalMapRenderer.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Users/845863027/Git/CottonKingdom/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

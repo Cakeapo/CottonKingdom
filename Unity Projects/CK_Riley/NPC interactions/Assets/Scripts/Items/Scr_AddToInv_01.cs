@@ -7,7 +7,7 @@ public class Scr_AddToInv_01 : MonoBehaviour {
     //Obj name to referance what gets added to inventory
     public string objName;
     public bool selfAssignName;
-    public bool isCollected, toDelet, isRespawn, isDeleted;
+    public bool isCollected, toDelet, isRespawn, isDeleted, canAdd;
 
     public GameObject objectToSpawn;
 
@@ -19,6 +19,7 @@ public class Scr_AddToInv_01 : MonoBehaviour {
 
 
         isDeleted = false;
+        canAdd = true;
 
         respawnTimer = 0;
 
@@ -62,6 +63,7 @@ public class Scr_AddToInv_01 : MonoBehaviour {
                     objName.transform.parent = gameObject.transform;
                     toDelet = false;
                     respawnTimer = 0;
+                    canAdd = true;
 
                 }
             }
@@ -73,7 +75,7 @@ public class Scr_AddToInv_01 : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.transform.tag == "Player")
+        if((other.gameObject.transform.tag == "Player" ) && (canAdd == true))
         {
             //play collect animation
 
@@ -84,14 +86,26 @@ public class Scr_AddToInv_01 : MonoBehaviour {
 
             //add to inventory
             int tempInt = PlayerPrefs.GetInt(objName);
+            
             if(objName != "")   
             {
                 PlayerPrefs.SetInt(objName, (tempInt + 1));
+
+                /*
+                    this could be optimised by having a local variable that gets called at 
+                    the start of the game and only saves during x item or afetr x time,
+                    this could help by reducing time delays in having to get a prefs name
+                    and int value and then giving it a new value less frequently.
+                */
+
                 toDelet = true;
             }
-                /*If the Object is not named to the correct object that is assigned to a 
-                PlayerPres account then it will return an error. 
-                Plese make sure that it is the correct name and uses the correct naming conventions.
+
+
+                /*
+                    If the Object is not named to the correct object that is assigned to a 
+                    PlayerPres account then it will return an error. 
+                    Plese make sure that it is the correct name and uses the correct naming conventions.
                 */
             else
             {
@@ -108,14 +122,14 @@ public class Scr_AddToInv_01 : MonoBehaviour {
             {
                 if (isRespawn == true)
                 {
-                    Destroy(gameObject.transform.GetChild(0).gameObject); //Delets the child the respawns after x seconds
+                    Destroy(gameObject.transform.GetChild(0).gameObject); //Delets the child that respawns after x seconds
                     
                     isDeleted = true;
                 }
 
                 else Destroy(gameObject);
             }
-
+            canAdd = false;
         }
 
     }
