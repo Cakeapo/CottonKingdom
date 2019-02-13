@@ -130,11 +130,6 @@
     <Compile Include="Assets\Scripts\Helper.cs" />
     <Compile Include="Assets\Scripts\Items\Scr_AddToInv_01.cs" />
     <Compile Include="Assets\Scripts\Items\Scr_InvOpn_01.cs" />
-    <Compile Include="Assets\Scripts\Menu\Scr_Exit.cs" />
-    <Compile Include="Assets\Scripts\Menu\Scr_GameToHome_01.cs" />
-    <Compile Include="Assets\Scripts\Menu\Scr_ResetGame_01.cs" />
-    <Compile Include="Assets\Scripts\Menu\Scr_UiMan_01.cs" />
-    <Compile Include="Assets\Scripts\Menu\StartScript.cs" />
     <Compile Include="Assets\Scripts\mouseHide.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Camera.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_CharacterAnimation.cs" />
@@ -144,6 +139,12 @@
     <Compile Include="Assets\Scripts\Scr_DataSaver_01.cs" />
     <Compile Include="Assets\Scripts\Scr_DataSaver_02.cs" />
     <Compile Include="Assets\Scripts\Scr_GameManager_01.cs" />
+    <Compile Include="Assets\Scripts\UI\Scr_Change_01.cs" />
+    <Compile Include="Assets\Scripts\UI\Scr_Exit.cs" />
+    <Compile Include="Assets\Scripts\UI\Scr_GameToHome_01.cs" />
+    <Compile Include="Assets\Scripts\UI\Scr_ResetGame_01.cs" />
+    <Compile Include="Assets\Scripts\UI\Scr_UiMan_01.cs" />
+    <Compile Include="Assets\Scripts\UI\StartScript.cs" />
     <Compile Include="Assets\StylizedWater\Scripts\EnableDepthBuffer.cs" />
     <Compile Include="Assets\StylizedWater\Scripts\StylizedWater.cs" />
     <Compile Include="Assets\StylizedWater\Scripts\StylizedWaterBlur.cs" />
