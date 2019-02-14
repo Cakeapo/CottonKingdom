@@ -11,11 +11,16 @@ public class Scr_GameManager_01 : MonoBehaviour {
     private CanvasGroup textboxGrp, answerGrp;
     public GameObject btn_Tp, btn_MdTp, btn_MdBt, btn_Bt;
     public bool canAnswer = false, close = false, activated = false, interactedWith = false;
+    public bool isDead = false;
+
+    [Space(15)]
+    public int livesCounter = 3;
 
 	// Use this for initialization
 	void Start ()
     {
-        
+        //SaveLives();      Used to save the lives and set PlayerPrefs
+        livesCounter = PlayerPrefs.GetInt("lives");
         textboxGrp = textboxImage.GetComponent<CanvasGroup>();
         answerGrp = answerImage.GetComponent<CanvasGroup>();
         canAnswer = close = interactedWith = activated = false;
@@ -28,7 +33,14 @@ public class Scr_GameManager_01 : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if(livesCounter <= 0)
+        {
+            isDead = true;
+        }
+
         
+
+
         if(close == true)
         {
             if (activated == true)
@@ -146,5 +158,10 @@ public class Scr_GameManager_01 : MonoBehaviour {
             btn_Bt.GetComponentInChildren<Text>().text = reply_03;
         }
 
+    }
+
+    public void SaveLives()
+    {
+        PlayerPrefs.SetInt("lives", livesCounter);
     }
 }
