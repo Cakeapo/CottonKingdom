@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CottonKingdom", "Assembly-CSharp.csproj", "{59E1AD0E-3DC5-ECC5-5751-4E9C9A2B5EBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{59E1AD0E-3DC5-ECC5-5751-4E9C9A2B5EBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CottonKingdom", "Assembly-CSharp-Editor.csproj", "{2AAC7B79-6E74-5A11-DDF5-E5B9888F8797}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{2AAC7B79-6E74-5A11-DDF5-E5B9888F8797}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
