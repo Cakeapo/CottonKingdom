@@ -16,6 +16,8 @@ public class Scr_UiMan_01 : MonoBehaviour
     bool invUIbool = false;
     public bool testing, inMenu, paused;
 
+    public GameObject btn_Customize;
+
     void Start()
     {
         if(testing == true)
@@ -23,6 +25,7 @@ public class Scr_UiMan_01 : MonoBehaviour
             inventoryCanvasUI.enabled = false;
         }
         paused = false;
+        btn_Customize.SetActive(paused);
         invUIAnim0 = inventoryCanvasUI.transform.GetChild(0).gameObject.GetComponent<Animator>();
         invUIAnim1 = inventoryCanvasUI.transform.GetChild(1).gameObject.GetComponent<Animator>();
     }
@@ -32,8 +35,7 @@ public class Scr_UiMan_01 : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape) == true)
         {
-            paused = !paused;
-            InventoryAnim();
+            PauseMenu();            
         }
     }
 
@@ -46,5 +48,12 @@ public class Scr_UiMan_01 : MonoBehaviour
         invUIAnim0.SetBool("IsUp", invUIbool);
 
 
+    }
+
+    public void PauseMenu()
+    {
+        paused = !paused;
+        btn_Customize.SetActive(paused);
+        InventoryAnim();
     }
 }

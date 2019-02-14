@@ -8,12 +8,18 @@ public class Scr_Change_01 : MonoBehaviour
     public Button btn_helmL, btn_helmR, btn_chestL, btn_chestR, btn_otherL, btn_otherR;
 
 
-    public int currentHelm, currentChest, currentOther,
-        totalHelm, totalChest, totalOther;
+    public int currentHelm, currentChest, currentOther, totalHelm, totalChest, totalOther;
 
     public string helmUnlocked, chestUnlocked, otherUnlocked;
 
+    [Space(15)]
+
     public GameObject[] helmMDL, chestMDL, otherMDL;
+
+    [Space(15)]
+
+    public Image overlayHelm, overlayChest, overlayOther;
+
 
     /*
       PlayerPrefs.SetInt("HelmEquip", 0); Sets player ehlmet to slot 0. 
@@ -43,26 +49,27 @@ public class Scr_Change_01 : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        Start();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+
 
     }
 
     //The following functions are called when the player changes an armour piece
-
+    
     public void ChangeHelm(int tochangeValue)
     {
         currentHelm += tochangeValue;
         if (currentHelm > totalHelm) { currentHelm = 0; }
         else if (currentHelm < 0) { currentHelm = totalHelm; }
 
-        foreach(GameObject obj in helmMDL)
-        {
-            obj.SetActive(false);
-        }
-        helmMDL[currentHelm].SetActive(true);
+        SetHelm();
 
     }
 
@@ -71,6 +78,9 @@ public class Scr_Change_01 : MonoBehaviour
         currentChest += tochangeValue;
         if (currentChest > totalChest) { currentChest = 0; }
         else if (currentChest < 0) { currentChest = totalChest; }
+
+        SetChest();
+
     }
 
     public void ChangeOther(int tochangeValue)
@@ -78,6 +88,9 @@ public class Scr_Change_01 : MonoBehaviour
         currentOther += tochangeValue;
         if (currentOther > totalOther) { currentOther = 0; }
         else if (currentOther < 0) { currentOther = totalOther; }
+
+        SetOther();
+
     }
 
 
@@ -105,27 +118,30 @@ public class Scr_Change_01 : MonoBehaviour
 
         if (char.GetNumericValue(helmUnlocked[currentHelm])/*helmUnInt helmUnlocked[currentHelm]*/ > 0)
         {
-            print("Confirmed equip. " + helmUnlocked[currentHelm]);
+            //print("Confirmed equip. " + helmUnlocked[currentHelm]);
             PlayerPrefs.SetInt("HelmEquip", currentHelm);
+            //SetHelm();
         }
-
         else
         {
             currentHelm = PlayerPrefs.GetInt("HelmEquip");
             print("Failed to equip Helm to player, Item not unlocked.");
         }
-
+        {
         /*
         else
         {
             PlayerPrefs.SetInt("HelmEquip", PlayerPrefs.GetInt("HelmEquip"));
         }
         */
+        }
+
 
         if (char.GetNumericValue(chestUnlocked[currentChest]) > 0)
         {
             //set as chest
             PlayerPrefs.SetInt("ChstEquip", currentChest);
+            //SetChest();
         }
         else
         {
@@ -133,31 +149,133 @@ public class Scr_Change_01 : MonoBehaviour
             print("Failed to equip Chest to player, Item not unlocked.");
         }
 
+
+
         if (char.GetNumericValue(otherUnlocked[currentOther]) > 0)
         {
             PlayerPrefs.SetInt("OthrEquip", currentOther);
+            //SetOther();
         }
         else
         {
             currentOther = PlayerPrefs.GetInt("OthrEquip");
             print("Failed to equip Other to player, Item not unlocked.");
         }
-
+        SetOutfit();
 
     }
+
+
 
     public void ReLoadPlayerOutfitData()
     {
         helmUnlocked = PlayerPrefs.GetString("helmUnlocked");
         chestUnlocked = PlayerPrefs.GetString("chestUnlocked");
         otherUnlocked = PlayerPrefs.GetString("otherUnlocked");
+        /*
         PlayerPrefs.SetInt("HelmEquip", currentHelm);
         PlayerPrefs.SetInt("ChstEquip", currentChest);
         PlayerPrefs.SetInt("OthrEquip", currentOther);
+        */
+        currentHelm = PlayerPrefs.GetInt("HelmEquip");
+        currentChest = PlayerPrefs.GetInt("ChstEquip");
+        currentOther = PlayerPrefs.GetInt("OthrEquip");
 
         totalHelm = helmUnlocked.Length - 1;
         totalChest = chestUnlocked.Length - 1;
         totalOther = otherUnlocked.Length - 1;
+        SetOutfit();
+    }
+
+    public void Default()
+    {
+        currentHelm = 0;
+        currentChest = 0;
+        currentOther = 0;
+
+        SetOutfit();
+    }
+
+
+    public void SetOutfit()
+    {
+        SetHelm();
+        SetChest();
+        SetOther();
+    }
+
+    public void SetHelm()
+    {
+        foreach (GameObject obj in helmMDL)
+        {
+            obj.SetActive(false);
+        }
+        helmMDL[currentHelm].SetActive(true);
+
+        if (char.GetNumericValue(helmUnlocked[currentHelm]) > 0)
+        {
+            overlayHelm.enabled = false;
+        }
+        else overlayHelm.enabled = true;
+    }
+
+
+
+    public void SetChest()
+    {
+        foreach (GameObject obj in chestMDL)
+        {
+            obj.SetActive(false);
+        }
+        chestMDL[currentChest].SetActive(true);
+
+        if (char.GetNumericValue(chestUnlocked[currentChest]) > 0)
+        {
+            overlayChest.enabled = false;
+        }
+        else overlayChest.enabled = true;
+    }
+
+
+
+    public void SetOther()
+    {
+        foreach (GameObject obj in otherMDL)
+        {
+            obj.SetActive(false);
+        }
+        otherMDL[currentOther].SetActive(true);
+        if (char.GetNumericValue(otherUnlocked[currentOther]) > 0)
+        {
+            overlayOther.enabled = false;
+
+        }
+
+        else overlayOther.enabled = true;
+
+    }
+
+
+
+    public void UnlockHelm( int locationInList)
+    {
+        string tempStr = PlayerPrefs.GetString("helmUnlocked");
+        tempStr = tempStr.Remove(locationInList).Insert(locationInList, "1");
+        PlayerPrefs.SetString("helmUnlocked", tempStr);
+    }
+
+    public void UnlockChest(int locationInList)
+    {
+        string tempStr = PlayerPrefs.GetString("chestUnlocked");
+        tempStr = tempStr.Remove(locationInList).Insert(locationInList, "1");
+        PlayerPrefs.SetString("chestUnlocked", tempStr);
+    }
+
+    public void UnlockOther(int locationInList)
+    {
+        string tempStr = PlayerPrefs.GetString("otherUnlocked");
+        tempStr = tempStr.Remove(locationInList).Insert(locationInList, "1");
+        PlayerPrefs.SetString("otherUnlocked", tempStr);
     }
 
     /*
