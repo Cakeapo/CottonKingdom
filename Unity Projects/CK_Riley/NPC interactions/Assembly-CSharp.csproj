@@ -136,6 +136,7 @@
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Controller.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Scr_Player_Motor.cs" />
     <Compile Include="Assets\Scripts\Scr_BasicNPC_01.cs" />
+    <Compile Include="Assets\Scripts\Scr_BasicNPC_02.cs" />
     <Compile Include="Assets\Scripts\Scr_DataSaver_01.cs" />
     <Compile Include="Assets\Scripts\Scr_DataSaver_02.cs" />
     <Compile Include="Assets\Scripts\Scr_GameManager_01.cs" />
@@ -167,19 +168,19 @@
     <None Include="Assets\VertexColorTrees\Shaders\VertexColorUnlit.shader" />
     <None Include="Assets\Misc\Node_Editor_Framework-develop\Node_Editor\Utilities\link.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Users/845863027/Git/CottonKingdom/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Users/845863027/Git/CottonKingdomOld/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Users/845863027/Git/CottonKingdom/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Users/845863027/Git/CottonKingdomOld/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Users/845863027/Git/CottonKingdom/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Users/845863027/Git/CottonKingdomOld/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Users/845863027/Git/CottonKingdom/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Users/845863027/Git/CottonKingdomOld/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/Users/845863027/Git/CottonKingdom/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>D:/Users/845863027/Git/CottonKingdomOld/Unity Projects/CK_Riley/NPC interactions/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/2018.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -386,13 +387,13 @@
       <HintPath>C:/Program Files/Unity/2018.3.2f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>D:/Users/845863027/Git/CottonKingdom/Unity Projects/CK_Riley/NPC interactions/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/Users/845863027/Git/CottonKingdomOld/Unity Projects/CK_Riley/NPC interactions/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/Users/845863027/Git/CottonKingdom/Unity Projects/CK_Riley/NPC interactions/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/Users/845863027/Git/CottonKingdomOld/Unity Projects/CK_Riley/NPC interactions/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>D:/Users/845863027/Git/CottonKingdom/Unity Projects/CK_Riley/NPC interactions/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/Users/845863027/Git/CottonKingdomOld/Unity Projects/CK_Riley/NPC interactions/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/2018.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
